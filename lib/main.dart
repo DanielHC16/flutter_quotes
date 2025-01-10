@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -24,55 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const AuthScreen(),
-    );
-  }
-}
-
-class AuthScreen extends StatelessWidget {
-  const AuthScreen({super.key});
-
-  Future<User?> _signInWithGoogle() async {
-    try {
-      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-      if (googleUser == null) {
-        return null; // User canceled the sign-in
-      }
-
-      final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
-      final credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth.accessToken,
-        idToken: googleAuth.idToken,
-      );
-
-      final userCredential = await FirebaseAuth.instance.signInWithCredential(credential);
-      return userCredential.user;
-    } catch (e) {
-      print('Google sign-in failed: $e');
-      return null;
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () async {
-            final user = await _signInWithGoogle();
-            if (user != null) {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => const MyHomePage(title: 'Daily Inspirational Quote')),
-              );
-            }
-          },
-          child: const Text('Sign in with Google'),
-        ),
-      ),
+      home: const MyHomePage(title: 'Daily Inspirational Quote'),
     );
   }
 }
@@ -98,12 +48,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<void> _fetchQuote() async {
     try {
+      // Fetch a random quote
       QuerySnapshot snapshot = await FirebaseFirestore.instance
           .collection('quotes')
           .get();
 
       if (snapshot.docs.isNotEmpty) {
-        final randomDoc = snapshot.docs.first;
+        final randomDoc = snapshot.docs.first; // Pick the first for simplicity
         setState(() {
           _quote = randomDoc['Quote'];
           _author = randomDoc['Author'];
@@ -125,18 +76,6 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
-        actions: [
-          IconButton(
-            onPressed: () async {
-              await FirebaseAuth.instance.signOut();
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => const AuthScreen()),
-              );
-            },
-            icon: const Icon(Icons.logout),
-          ),
-        ],
       ),
       body: Center(
         child: Column(

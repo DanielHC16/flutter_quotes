@@ -29,6 +29,57 @@
             {
               "client_id": "1033449353833-njj5cf90gvkq5mpsnrgdun4kerncsjio.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "1033449353833-7j4c8p3e5g5s3vmjbq9rfbgi32drqimi.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterQuotes"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1033449353833:android:276b65b1c2f266190fa8f8",
+        "android_client_info": {
+          "package_name": "com.example.quotes_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1033449353833-5r0m5ebpotf5c0vi5b8b58tfilqritcp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.quotes_project",
+            "certificate_hash": "785b808685e48c517493b7592b46128ce9fd0381"
+          }
+        },
+        {
+          "client_id": "1033449353833-njj5cf90gvkq5mpsnrgdun4kerncsjio.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjSAKDNWrLDYZ8p2N3GaYywcaNS2rTd6w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1033449353833-njj5cf90gvkq5mpsnrgdun4kerncsjio.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1033449353833-7j4c8p3e5g5s3vmjbq9rfbgi32drqimi.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterQuotes"
+              }
             }
           ]
         }
