@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1033449353833",
+    "project_id": "quotes-project-201b3",
+    "storage_bucket": "quotes-project-201b3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1033449353833:android:44f4313888aed14e0fa8f8",
+        "android_client_info": {
+          "package_name": "com.example.flutter_quotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1033449353833-njj5cf90gvkq5mpsnrgdun4kerncsjio.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjSAKDNWrLDYZ8p2N3GaYywcaNS2rTd6w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1033449353833-njj5cf90gvkq5mpsnrgdun4kerncsjio.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
